@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "apps:run": "concurrently \"cd host && npm install && npm start\" \"cd todo-list && npm install && npm start\"",
+    "apps:build:start": "concurrently \"cd host && npm install && npm run build && npm run build:start\" \"cd todo-list && npm install && npm run build && npm run build:start\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
