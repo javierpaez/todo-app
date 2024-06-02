@@ -93,3 +93,32 @@ The micro-frontend application can be deployed as a separate bundle and integrat
 - Webpack
 - Testing Library React
 - Tailwind (for styling)
+
+### Video
+
+https://github.com/javierpaez/todo-app/assets/69057061/dc15de55-431c-4b35-b946-52bebe535aad
+
+### Extra Notes
+
+#### Architecture inside TODO MFE
+The TODO Project leverages Atomic Design principles for building the user interface components.
+This approach allow us to have a good component reusability, independent development, maintainability and concistency aligned with the MFE principles.
+
+When we implement more MFEs we can have a Shared Component Library to being used in all the MFEs.
+
+#### How you’d handle potential prop/data communication? 
+We can handle this with different ways, I am enummerating the potential cases:
+1. Centralized State: for example a centralized redux can send data to the rest of the MFEs.
+2. Single source of truth: for example having a shared database or a shared service that can consume all the MFEs.
+3. Events: this can be implemented with rxjs libraries to have a central event bus service and the MFEs can subscribe or listen events.
+4. Session/Local Storage: if the data is not sensible we can send some data between the MFEs through the browser.
+
+#### Why Webpack for Micro-Frontends?
+This project utilizes Webpack as the foundation for managing micro-frontend (MFE) applications. Here's why Webpack is a strong choice for MFE development:
+
+Benefits of Webpack for MFEs:
+1. Module Bundling: Webpack excels at bundling modules and dependencies for each MFE, resulting in optimized builds that improve loading performance.
+2. Code Splitting: Webpack's code splitting functionality allows you to break down MFE code into smaller chunks, enabling lazy loading and faster initial page loads.
+3. Shared Dependencies: Webpack can efficiently manage shared dependencies between MFEs, preventing duplicate code and reducing overall bundle size.
+4. Flexibility: Webpack's configuration options provide fine-grained control over the build process, allowing you to tailor it to your specific MFE architecture needs.
+5. Ecosystem Integration: Webpack integrates seamlessly with various loaders, plugins, and development servers, providing a versatile platform for building and serving MFE applications.
